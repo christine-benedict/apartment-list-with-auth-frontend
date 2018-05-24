@@ -81,7 +81,7 @@ export default class AuthService {
         ...options
       })
       .then(this._checkStatus)
-      .then(response => response.json())
+      .then(response => response.json()).catch()
     }
 
     _checkStatus(response) {
