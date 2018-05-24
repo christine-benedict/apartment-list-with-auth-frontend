@@ -32,7 +32,6 @@ class NewUser extends Component {
     }
 
     render(){
-        console.log(this.state.createSuccess)
         return(
             <div>
                 <form>

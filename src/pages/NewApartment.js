@@ -107,4 +107,4 @@ class NewApartment extends Component {
 
 
 
-export default withAuth(NewApartment)
+export default NewApartment

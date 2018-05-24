@@ -9,7 +9,6 @@ let getApartments = function(){
 export {getApartments}
 
 let createApartment = function(form){
-    console.log(form);
     return fetch(BASE+'/apartments', {
         body: JSON.stringify(form),
         headers: {
@@ -26,7 +25,6 @@ let createApartment = function(form){
 export {createApartment}
 
 let createUser = function(user){
-    console.log(user);
     let newUser = {user: user}
     return fetch(BASE+'/users', {
         body: JSON.stringify(newUser),

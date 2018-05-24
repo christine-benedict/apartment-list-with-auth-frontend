@@ -25,17 +25,15 @@ class App extends Component {
     }
 
     componentWillMount(){
-
         console.log(Auth.loggedIn());
         if(Auth.loggedIn()){
             const userId = Auth.getUserId()
-            Auth.fetch(`http://localhost:3000/users/${userId}`).then( response =>
-                var loggedUser = response
+            Promise.all( [Auth.fetch(`http://localhost:3000/users/${userId}`), getApartments()] )
+            .then( results => {this.setState({user: results[0], apartments: results[1]})}
             )
+        } else {
+          getApartments().then(APIapartments => {this.setState({apartments: APIapartments})})
         }
-        console.log(loggedUser)
-        getApartments().then( APIapartments => {this.setState({apartments: APIapartments, user: loggedUser})
-        })
     }
 
 
