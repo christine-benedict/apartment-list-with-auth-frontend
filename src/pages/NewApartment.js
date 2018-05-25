@@ -99,7 +99,7 @@ class NewApartment extends Component {
                     value="Create Apartment"
                     onClick={this.handleSubmit.bind(this)}
                   />
-                </form>{this.state.createSuccess && <Redirect to="/" />}
+                </form>{this.state.createSuccess && <Redirect to="/apartments" />}
             </div>
         )
     }
@@ -107,4 +107,4 @@ class NewApartment extends Component {
 
 
 
-export default NewApartment
+export default withAuth(NewApartment)

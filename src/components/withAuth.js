@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AuthService from '../api/AuthService'
 
-export default function withAuth(component) {
+export default function withAuth(WrappedComponent) {
   const Auth = new AuthService()
   return class AuthWrapped extends Component {
     constructor() {
@@ -32,7 +32,7 @@ export default function withAuth(component) {
     render() {
       if (this.state.userId) {
         return (
-          <component history={this.props.history} userId={this.state.userId} />
+          <WrappedComponent history={this.props.history} userId={this.state.userId} />
         )
       }
       else {
