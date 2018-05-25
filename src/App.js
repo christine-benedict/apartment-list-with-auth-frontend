@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { withRouter, Redirect, Route, Switch } from 'react-router-dom'
 import ApartmentList from './pages/ApartmentList'
 import NewApartment from './pages/NewApartment'
 import NewUser from './pages/NewUser'
 import Header from './components/Header'
 import Login from './components/Login'
 import AuthService from './api/AuthService'
-import history from './history'
 
 const Auth = new AuthService()
 
@@ -20,7 +19,7 @@ class App extends Component {
     }
     handleLogout(){
         Auth.logout()
-        this.props.history.replace("/")
+        this.props.history.push("/")
     }
 
     componentWillMount(){
@@ -46,4 +45,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default withRouter(App)
