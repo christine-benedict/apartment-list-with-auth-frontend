@@ -1,4 +1,4 @@
-const BASE ="https://apartment-list-backend.herokuapp.com/"
+const BASE ="https://apartment-list-backend.herokuapp.com"
 
 let getApartments = function(){
     return fetch(BASE+'/apartments').then( (rawResponse) => {
