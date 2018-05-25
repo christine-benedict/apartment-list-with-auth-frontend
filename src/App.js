@@ -25,7 +25,7 @@ class App extends Component {
     componentWillMount(){
         if(Auth.loggedIn()){
             const userId = Auth.getUserId()
-            Auth.fetch(`http://localhost:3000/users/${userId}`).then( results => this.setState({user: results}))
+            Auth.fetch(`https://apartment-list-backend.herokuapp.com/users/${userId}`).then( results => this.setState({user: results}))
         }
     }
 
